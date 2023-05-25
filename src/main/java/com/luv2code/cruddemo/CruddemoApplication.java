@@ -33,6 +33,7 @@ public class CruddemoApplication {
 		System.out.println("Delete student record by student ID ... ");
 		Optional<Student> student = readStudent(studentDAO);
 		if(student.isEmpty()) {
+			System.out.println("Sorry, couldn't find the student by the ID provided");
 			return;
 		}
 		studentDAO.delete(student.get().getId());
